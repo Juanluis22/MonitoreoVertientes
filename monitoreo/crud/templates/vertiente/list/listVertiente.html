@@ -1,0 +1,67 @@
+
+
+
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
+
+    </head>
+
+        <body>
+            
+            <h1>Lista de Vertientes</h1>
+    
+
+    
+    
+
+
+
+
+
+    <div class="card-body">
+        <table class="table table-bordered">
+
+        <thead>
+        <tr>
+
+        <th style="width: 10px">id</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Ubicación</th>
+        <th>Comunidad</th>
+        
+
+        </tr>
+        </thead>
+
+        <tbody>
+            {% for objeto in listaVertiente %}   
+            <tr>
+                
+                    <td>{{ objeto.id }}</td>
+                    <td>{{ objeto.nombre }}</td>
+                    <td>{{ objeto.desc }}</td>
+                    <td>{{ objeto.ubicación }}</td>
+                    <td>{{ objeto.comunidad }}</td>
+                    
+                        
+                    
+                
+            </tr>
+            {% endfor %}
+
+        </tbody>
+        </table>
+        
+        
+        </div>
+        <div class="col-lg-6">
+            <a href="{% url 'crud:indvert' %}" class="btn btn-info">Volver</a>
+
+        </div>
+
+        </body>
+    
+</html>

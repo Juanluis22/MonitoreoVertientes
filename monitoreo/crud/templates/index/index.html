@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
+    </head>
+
+
+    <body>
+
+        
+
+
+
+
+
+
+        <div class="row">
+            
+            
+            <div class="col-lg-6">
+
+            <div class="card">
+            <div class="card-header">
+            <h5 class="card-title m-0">Usuarios</h5>
+            </div>
+            <div class="card-body">
+            <h6 class="card-title">Administración para Usuarios</h6>
+            <p class="card-text"></p>
+            <a href="{% url 'crud:induser' %}" class="btn btn-primary">Acceder</a>
+            </div>
+            </div>
+
+            <div class="card card-primary card-outline">
+            <div class="card-header">
+            <h5 class="card-title m-0">Habitantes</h5>
+            </div>
+            <div class="card-body">
+            <h6 class="card-title">Administración para Habitantes</h6>
+            <p class="card-text"></p>
+            <a href="{% url 'crud:indhabit' %}" class="btn btn-success">Acceder</a>
+            </div>
+            </div>
+
+            <div class="card card-primary card-outline">
+                <div class="card-header">
+                <h5 class="card-title m-0">Comunidad</h5>
+                </div>
+                <div class="card-body">
+                <h6 class="card-title">Administración para Comunidad</h6>
+                <p class="card-text"></p>
+                <a href="{% url 'crud:indcom' %}" class="btn btn-warning">Acceder</a>
+                </div>
+                </div>
+
+                <div class="card card-primary card-outline">
+                    <div class="card-header">
+                    <h5 class="card-title m-0">Vertientes</h5>
+                    </div>
+                    <div class="card-body">
+                    <h6 class="card-title">Administración para Vertientes</h6>
+                    <p class="card-text"></p>
+                    <a href="{% url 'crud:indvert' %}" class="btn btn-danger">Acceder</a>
+                    </div>
+                    </div>
+            </div>
+            
+            </div>
+
+            <div class="col-lg-6">
+                <a href="{% url 'nucleo:login' %}" class="btn btn-info">Login</a>
+
+            </div>
+
+
+
+            
+    </body>
+
+
+</html>

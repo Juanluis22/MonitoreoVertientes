@@ -1,0 +1,76 @@
+
+
+
+
+<html>
+    <head>
+      <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
+
+    </head>
+    <style>
+      .center-div {
+        width: 900px; /* Ajusta el ancho según tus necesidades */
+        margin: 0 auto; /* Establece margen automático en los lados */
+        background-color: rgb(211, 211, 211);
+      }
+      </style>
+    <body>
+
+        
+
+            <div class="center-div">
+              <div class="card-header">
+              <h3 class="card-title">Nueva comunidad</h3>
+              </div>
+              
+              
+              <form method="post">
+              <div class="card-body">
+              <div class="form-group">
+                
+                {{ form.errors }}
+              
+              
+              
+              
+              {% csrf_token %}
+              {% for field in form.visible_fields %}
+              <div class="form-group">
+                <label for="email">{{ field.label }}  </label>
+                {{ field }}
+              </div>
+              {% endfor %}
+              
+
+              </div>
+              
+              </div>
+              
+              <div class="card-footer">
+              <button type="submit" class="btn btn-success">Crear</button>
+              <a href="{% url 'crud:indcom' %}" class="button">
+                <button type="button" class="btn btn-danger">Volver</button>  
+              </a>
+              </div>
+              
+              </form>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
