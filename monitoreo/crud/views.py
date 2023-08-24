@@ -22,9 +22,12 @@ class Indice(TemplateView):
 
 #Indice para User
 class IndiceUser(TemplateView):
+    template_name = 'usuario/index/index.html'
     
-    template_name = 'usuario/index/index.html'  
-    context_object_name = 'listaUser'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['listaUser'] = User.objects.all()  # Obtener todos los usuarios
+        return context
 
 
 #Vista para crear un nuevo User

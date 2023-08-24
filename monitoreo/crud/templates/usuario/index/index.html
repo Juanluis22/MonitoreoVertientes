@@ -1,54 +1,49 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
-        
-    </head>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-6">
 
-
-    <body>
-
-        
-
-
-
-        <div class="row">
-            
-            
-            <div class="col-lg-6">
-
-            <div class="card">
-            <div class="card-header">
-            <h5 class="card-title m-0">Creación</h5>
-            </div>
             <div class="card-body">
-            <h6 class="card-title">Crear un usuario</h6>
-            <p class="card-text"></p>
-            <a href="{% url 'crud:newuser' %}" class="btn btn-primary">Acceder</a>
-            </div>
-            </div>
-
-            <div class="card card-primary card-outline">
-            <div class="card-header">
-            <h5 class="card-title m-0">Visualización</h5>
-            </div>
-            <div class="card-body">
-            <h6 class="card-title">Ver los usuarios registrados</h6>
-            <p class="card-text"></p>
-            <a href="{% url 'crud:listuser' %}" class="btn btn-success">Acceder</a>
-            </div>
-            </div>
-
-            
-            </div>
-            
-            
-            </div>
-            <div class="col-lg-6">
-                <a href="{% url 'crud:index' %}" class="btn btn-info">Volver</a>
-
-            </div>
-    </body>
-
-
+                <table class="table table-bordered">
+        
+                <thead>
+                <tr>
+        
+                <th style="width: 10px">id</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th style="width: 40px">Es admin?</th>
+        
+                </tr>
+                </thead>
+         <!-- # Falta opcion para Filtrar, y paginador. # -->
+                <tbody>
+                    {% for objeto in listaUser %}   
+                    <tr>
+                        
+                            <td>{{ objeto.id }}</td>
+                            <td>{{ objeto.username }}</td>
+                            <td>{{ objeto.email }}</td>
+                            <td>{{ objeto.is_superuser }}</td>
+                            
+                                
+                            
+                        
+                    </tr>
+                    {% endfor %}
+        
+                </tbody>
+                </table>
+        </div>
+    </div>
+    
+    <div class="col-lg-6">
+        <a href="{% url 'crud:index' %}" class="btn btn-info">Volver</a>
+    </div>
+</body>
 </html>
