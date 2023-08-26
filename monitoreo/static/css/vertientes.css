@@ -8,6 +8,12 @@
     padding: 10px 20px;
 }
 
+.navbar-center {
+    flex: 1; /* Toma el espacio restante */
+    text-align: center;
+    font-weight: bold;
+}
+
 .navbar-nav {
     list-style: none;
     display: flex;
